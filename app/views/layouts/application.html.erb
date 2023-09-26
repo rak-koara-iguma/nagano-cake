@@ -15,43 +15,43 @@
     <header>
 
       <div class="container">
-      <div class="row">
-        <div class="col-lg-2 border border-dark">
-          <h1>LOGO</h1>
-        </div>
-        <div class="col-lg-8 text-end">
-      <% if customer_signed_in? %>
-      <tr>
-      <td>
-        <%= link_to "マイページ", new_customer_registration_path, class: "btn btn-dark" %>
-      </td>
-      <td>
-        <%= link_to "商品一覧", new_customer_session_path, class: "btn btn-dark" %>
-      </td>
-      <td>
-        <%= link_to "カート", new_customer_registration_path, class: "btn btn-dark" %>
-      </td>
-      <td>
-        <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn btn-dark" %>
-      </td>
-      </tr>
-      <% else %>
-      <tr>
-      <td>
-        <%= link_to "About", about_path %>
-      </td>
-      <td>
-        <%= link_to "商品一覧", new_customer_session_path %>
-      </td>
-      <td>
-        <%= link_to "新規登録", new_customer_registration_path %>
-      </td>
-      <td>
-        <%= link_to "ログイン", new_customer_session_path %>
-      </td>
-      </tr>
-    <% end %>
-    </div>
+        <div class="row">
+          <div class="col-lg-2 border border-dark">
+            <h1>LOGO</h1>
+          </div>
+          <div class="col-lg-8 text-end">
+            <% if customer_signed_in? %>
+              <tr>
+                <td>
+                  <%= link_to "マイページ", public_customers_my_page_path, class: "btn btn-dark" %>
+                </td>
+                <td>
+                  <%= link_to "商品一覧", public_items_path, class: "btn btn-dark" %>
+                </td>
+                <td>
+                  <%= link_to "カート", new_customer_registration_path, class: "btn btn-dark" %>
+                </td>
+                <td>
+                  <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn btn-dark" %>
+                </td>
+              </tr>
+            <% else %>
+              <tr>
+                <td>
+                  <%= link_to "About", about_path %>
+                </td>
+                <td>
+                  <%= link_to "商品一覧", public_items_path %>
+                </td>
+                <td>
+                  <%= link_to "新規登録", new_customer_registration_path %>
+                </td>
+                <td>
+                  <%= link_to "ログイン", new_customer_session_path %>
+                </td>
+              </tr>
+            <% end %>
+      </div>
     </div>
     <tr>
     </tr>

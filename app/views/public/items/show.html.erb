@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" style="background-color: white;">
+      <%= render "public/shared/janru" %>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-5">
+          <%= image_tag @item.get_image, size: "300x200" %>
+        </div>
+        <div class="col-md-7">
+           <h1><%= @item.name %></h1>
+           <h3><%= @item.introduction %></h3>
+           <h2><%= @item.price %></h2>
+           <p><%= link_to "カートに入れる", public_customers_my_page_path, class: "btn btn-success" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

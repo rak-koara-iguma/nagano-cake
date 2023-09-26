@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <table>
+      <%= form_with model: @customer, url: admin_customer_path(@customer.id), method: :patch do |f| %>
+        <tr>
+          <td class="p-3">会員ID</td>
+          <td class="p-3"><%= @customer.id %></td>
+          <td class="p-3"></td>
+        </tr>
+        <tr>
+          <td class="p-3">氏名</td>
+          <td class="p-3"><%= f.text_field :last_name, class: "form-control", placeholder: "令和" %></td>
+          <td class="p-3"><%= f.text_field :first_name, class: "form-control", placeholder: "道子" %></td>
+        </tr>
+        <tr>
+          <td class="p-3">フリガナ</td>
+          <td class="p-3"><%= f.text_field :last_name_kana, class: "form-control", placeholder: "レイワ" %></td>
+          <td class="p-3"><%= f.text_field :first_name_kana, class: "form-control", placeholder: "ミチコ" %></td>
+        </tr>
+        <tr>
+          <td class="p-3">郵便番号</td>
+          <td class="p-3"><%= f.text_field :postal_code, class: "form-control", placeholder: "0000000" %></td>
+        </tr>
+        <tr>
+          <td class="p-3">住所</td>
+          <td class="p-6"><%= f.text_field :addres, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <td class="p-3">電話番号</td>
+          <td class="p-3"><%= f.text_field :telephone_number, class: "form-control", placeholder: "01234567890" %></td>
+        </tr>
+        <tr>
+          <td class="p-3">メールアドレス</td>
+          <td class="p-3"><%= f.text_field :email, class: "form-control", placeholder: "@〇mail" %></td>
+        </tr>
+        <tr>
+          <td class="p-3">会員ステータス</td>
+          <td class="p-3"></td>
+        </tr>
+        <tr>
+          <td><%= f.submit "変更を保存", class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

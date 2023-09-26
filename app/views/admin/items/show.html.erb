@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>商品詳細</h1>
+  <div class="row">
+      <div class="col-md-3" style="background-color: white;">
+    <%= image_tag @item.get_image, size: "300x200" %>
+      </div>
+      <div class="col-md-8 offset-md-1">
+      <p>商品名：<%= @item.name %></p>
+        <p>商品説明：<%= @item.introduction %></p>
+          <p>税込み価格(税抜き価格)：<%= @item.price %></p>
+      </div>
+  </div>
+</div>

@@ -29,7 +29,9 @@ class Public::SessionsController < Devise::SessionsController
 def customer_state
   @customer = Customer.find_by(email: params[:customer][:email])
   return if !@customer
-  if @customer.valid_password?(params[:customer][:password])
+  if @customer.valid_password?(params[:customer][:password]) && (@customer.is_deleted == ture)
+  #カラムの中身に応じて処置の分岐。is_deletedが真＝サインアップにリダイレクト、偽の場合createの実行
+  #退会フラグのデータ型booleanは0なら未退会、1なら退会済み、という風に0か1かだけでできる場合に使うデータ型
   end
 end
 end

@@ -1,0 +1,47 @@
+<%= form_with model: @customer, url: public_customers_path(@customer), method: :patch do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-mg-6 text-center">
+        <table>
+        <td>会員情報編集</td>
+        </table>
+        <table>
+        <tr>
+   　　　　　 <td class="p-3">フリガナ</td>
+ 　　　　　   <td class="p-3"><%= f.text_field :last_name, class: "form-control", placeholder: "山田" %></td>
+         <td class="p-3"><%= f.text_field :first_name, class: "form-control", placeholder: "花子" %></td>
+        </tr>
+        <tr>
+         <td class="p-3">フリガナ</td>
+         <td class="p-3"><%= f.text_field :last_name_kana, class: "form-control", placeholder: "ヤマダ" %></td>
+         <td class="p-3"><%= f.text_field :first_name_kana, class: "form-control", placeholder: "ハナコ" %></td>
+        </tr>
+        <tr>
+         <td class="p-3">郵便番号</td>
+         <td class="p-3"><%= f.text_field :postal_code, class: "form-control", placeholder: "150041" %></td>
+        </tr>
+        <tr>
+         <td class="p-3">住所</td>
+         <td class="p-3"><%= f.text_field :address, class: "form-control", placeholder: "東京都渋谷区神南１丁目１９-１１ パークスクエア２４階" %></td>
+        </tr>
+        <tr>
+         <td class="p-3">電話番号</td>
+         <td class="p-3"><%= f.text_field :telephone_number, class: "form-control", placeholder: "0368694700" %></td>
+        </tr>
+        <tr>
+         <td class="p-3">メールアドレス</td>
+         <td class="p-3"><%= f.text_field :email, class: "form-control", placeholder: "hoge@example.com" %></td>
+        </tr>
+        </table>
+        <table>
+          <tr>
+          <td class="p-3"></td>
+          <td><%= f.submit '編集内容を保存', class: "btn btn-success" %></td>
+          <td class="p-3"></td>
+          <td><%= link_to "退会する", public_customers_withdrawal_check_path, class: "btn btn-danger" %></td>
+          </tr>
+        </table>
+    </div>
+  </div>
+</div>
+<% end %>
