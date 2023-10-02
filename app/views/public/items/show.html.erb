@@ -1,3 +1,4 @@
+<%= form_with model: CartItem.new do |f| %>
 <div class="container">
   <div class="row">
     <div class="col-md-4" style="background-color: white;">
@@ -12,9 +13,12 @@
            <h1><%= @item.name %></h1>
            <h3><%= @item.introduction %></h3>
            <h2><%= @item.price %></h2>
-           <p><%= link_to "カートに入れる", public_customers_my_page_path, class: "btn btn-success" %></p>
+           <%= f.hidden_field :item_id, :value => @item.id %>
+           <p><%= f.select :amount, *[1..5] %></p>
+           <p><%= f.submit 'カートに入れる', class: "btn btn-success" %></p>
         </div>
       </div>
     </div>
   </div>
 </div>
+<% end %>

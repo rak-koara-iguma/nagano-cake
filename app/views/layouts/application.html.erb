@@ -23,10 +23,10 @@
             <% if customer_signed_in? %>
               <tr>
                 <td>
-                  <%= link_to "マイページ", public_customers_my_page_path, class: "btn btn-dark" %>
+                  <%= link_to "マイページ", customers_my_page_path, class: "btn btn-dark" %>
                 </td>
                 <td>
-                  <%= link_to "商品一覧", public_items_path, class: "btn btn-dark" %>
+                  <%= link_to "商品一覧", items_path, class: "btn btn-dark" %>
                 </td>
                 <td>
                   <%= link_to "カート", new_customer_registration_path, class: "btn btn-dark" %>
@@ -41,7 +41,7 @@
                   <%= link_to "About", about_path %>
                 </td>
                 <td>
-                  <%= link_to "商品一覧", public_items_path %>
+                  <%= link_to "商品一覧", items_path %>
                 </td>
                 <td>
                   <%= link_to "新規登録", new_customer_registration_path %>
