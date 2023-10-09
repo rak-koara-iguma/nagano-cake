@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     patch '/customers/withdrawal' => "customers#withdrawal"
     get 'items/:id' => 'items#show', as: 'item'
     delete 'cart_items/destroy_all' => 'cart_items#destroy_all'
-    get 'orders/check' => 'orders#check'
+    post 'orders/check' => 'orders#check'
     get 'orders/complete' => 'orders#complete'
  
     resources :items, only: [:index, :show]
